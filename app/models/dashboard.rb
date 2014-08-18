@@ -8,6 +8,6 @@ class Dashboard
   end
 
   def links
-    @user.links
+    @user.active_links
   end
 end
