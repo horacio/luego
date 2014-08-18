@@ -1,0 +1,10 @@
+<li class='<%= "link_#{link.id}" %>'>
+  <%= link_to link.url, link_path(link) %>
+  <%= time_ago_in_words(link.created_at) %>
+  <% if link.archived? %>
+    <%= link_to 'Restore', restore_link_path(link), method: :put %>
+  <% else %>
+    <%= link_to 'Archive', archive_link_path(link), method: :put %>
+  <% end %>
+  <%= link_to 'Remove', link_path(link), method: :delete %>
+</li>
