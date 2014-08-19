@@ -1,6 +1,8 @@
 class Link < ActiveRecord::Base
   belongs_to :user
 
+  validates :url, presence: true, uniqueness: true
+
   default_scope { order("created_at DESC") }
 
   scope :active, -> { where(archived: false) }
