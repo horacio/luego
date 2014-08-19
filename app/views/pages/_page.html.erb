@@ -1,0 +1,10 @@
+<li class='<%= "page_#{page.id}" %>'>
+  <%= link_to page.url, page_path(page) %>
+  <%= time_ago_in_words(page.created_at) %>
+  <% if page.archived? %>
+    <%= link_to 'Restore', restore_page_path(page), method: :put %>
+  <% else %>
+    <%= link_to 'Archive', archive_page_path(page), method: :put %>
+  <% end %>
+  <%= link_to 'Remove', page_path(page), method: :delete %>
+</li>

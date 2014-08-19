@@ -1,9 +1,10 @@
-def archive_link(link)
-  sign_in_and_save_link(link)
+def archive_page(page)
+  user_sign_in
+  persist_page(page)
   click_link 'Archive'
 end
 
-def restore_last_archived_link
+def restore_last_archived_page
   visit archive_path
 
   within('#archived') do

@@ -1,10 +1,10 @@
 <h1>Dashboard</h1>
 
-<%= form_for @dashboard.new_link do |f| %>
+<%= form_for @dashboard.new_page do |f| %>
   <%= f.text_field :url, id: 'url', placeholder: 'Save this for later...' %>
-  <%= f.submit 'Add Link' %>
+  <%= f.submit 'Add Page' %>
 <% end %>
 
-<ul id="links">
-  <%= render @dashboard.links %>
+<ul id="pages">
+  <%= render @dashboard.pages %>
 </ul>

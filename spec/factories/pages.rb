@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :link do
+  factory :page do
     sequence :url do |n|
       "https://www.site_#{n}.com"
     end

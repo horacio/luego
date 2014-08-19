@@ -3,11 +3,11 @@ class Dashboard
     @user = user
   end
 
-  def new_link
-    Link.new
+  def new_page
+    Page.new
   end
 
-  def links
-    @user.active_links
+  def pages
+    @user.active_pages
   end
 end

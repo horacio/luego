@@ -3,7 +3,7 @@ class Archive
     @user = user
   end
 
-  def links
-    @user.archived_links
+  def pages
+    @user.archived_pages
   end
 end

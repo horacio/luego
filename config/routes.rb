@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :archive, only: [:show]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :links, only: [:create, :show, :destroy] do
+  resources :pages, only: [:create, :show, :destroy] do
     member do
       put 'archive'
       put 'restore'

@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818203734) do
+ActiveRecord::Schema.define(version: 20140819152953) do
 
-  create_table "links", force: true do |t|
+  create_table "pages", force: true do |t|
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
