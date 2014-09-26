@@ -242,6 +242,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   monban-generators
+  nokogiri
   pry
   pry-nav
   rails (= 4.1.4)

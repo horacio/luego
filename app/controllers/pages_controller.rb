@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def create
     page = current_user.pages.build(page_params)
     page.save
+    page.parse!
     redirect_to dashboard_path
   end
 

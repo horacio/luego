@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819152953) do
+ActiveRecord::Schema.define(version: 20140926211657) do
 
   create_table "pages", force: true do |t|
     t.string   "url"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20140819152953) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "archived",   default: false
+    t.text     "pure_html"
+    t.text     "body"
+    t.string   "title"
   end
 
   create_table "users", force: true do |t|

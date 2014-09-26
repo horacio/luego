@@ -7,6 +7,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'monban-generators'
+gem 'nokogiri'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.3'
