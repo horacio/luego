@@ -27,15 +27,6 @@ class Page < ActiveRecord::Base
   end
 
   def parse!
-    self.title = Parsers::Title.parse(document)
-    self.body = Parsers::Body.parse(document)
-
-    save
-  end
-
-  private
-
-  def document
-    @document ||= open(url, allow_redirections: :safe).read
+    ParserWorker.perform_async(self.id)
   end
 end
