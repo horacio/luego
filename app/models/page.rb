@@ -13,8 +13,6 @@ class Page < ActiveRecord::Base
       }
     }
 
-  default_scope { order("created_at DESC") }
-
   scope :active, -> { where(archived: false) }
   scope :archived, -> { where(archived: true) }
 
