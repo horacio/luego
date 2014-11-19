@@ -11,15 +11,9 @@ module Parsers
     end
 
     def parse_body
-      parents = document.css('p').map(&:parent).uniq
+      content = find_most_valuable_text_chunk
 
-      parent = parents.select { |candidate| satisfy_rules?(candidate) }.first
-
-      return '' unless parent
-
-      parent.css('iframe, link, style, script').remove
-
-      parent.inner_html
+      sanitize_markup(content)
     end
 
     private
@@ -33,6 +27,25 @@ module Parsers
       matches_ids = candidate.attr('id') =~ possible_classes_and_ids
 
       matches_element || matches_classes || matches_ids
+    end
+
+    def find_most_valuable_text_chunk
+      parents = document.css('p').map(&:parent).uniq
+
+      qualified_chunks = parents.select do |candidate|
+        satisfy_rules?(candidate)
+      end
+
+      qualified_chunks.first
+    end
+
+    def sanitize_markup(content)
+      return '' if content.blank?
+
+      content.css('iframe, link, style, script').remove
+      content.xpath('//@class').remove
+
+      content.inner_html
     end
   end
 end
