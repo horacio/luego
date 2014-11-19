@@ -1,5 +1,5 @@
 def user_sign_up(username, email, password)
-  click_link 'Sign up'
+  click_link 'Sign Up'
   fill_in 'Username', with: username
   fill_in 'Email', with: email
   fill_in 'Password', with: password
@@ -11,7 +11,7 @@ def user_sign_in(user = nil)
 
   visit root_path
 
-  click_link 'Sign in'
+  click_link 'Sign In'
 
   fill_in 'Email', with: user.email
   fill_in 'Password', with: 'password'
