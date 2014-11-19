@@ -3,10 +3,15 @@ require 'open-uri'
 class Page < ActiveRecord::Base
   belongs_to :user
 
+  validates :url, presence: true, uniqueness: true
   validates :url,
-    presence: true,
-    uniqueness: true,
-    format: { with: /http|https/ }
+    format: {
+      with: /\A(http|https):\/\//,
+      message: %{
+        The URL is invalid and cannot be saved.
+        Please use a valid URL beginning with http:// or https://
+      }
+    }
 
   default_scope { order("created_at DESC") }
 

@@ -9,10 +9,7 @@ class PagesController < ApplicationController
       page.parse!
       message = 'Page has been created.'
     else
-      message = %{
-        The URL is invalid and cannot be saved.
-        Please use a valid URL beginning with http:// or https://
-      }
+      message = page.errors.messages.values.join("\n")
     end
 
     redirect_to dashboard_path, notice: message
