@@ -5,6 +5,12 @@
   <%= f.submit 'Add Page' %>
 <% end %>
 
-<ul id="pages">
-  <%= render @dashboard.pages %>
-</ul>
+<% unless @dashboard.pages.empty? %>
+  <ul id="pages">
+    <%= render @dashboard.pages %>
+  </ul>
+<% else %>
+  <p>
+    Nothing to see here, yet.
+  </p>
+<% end %>
