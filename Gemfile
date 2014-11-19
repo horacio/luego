@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'monban-generators'
 gem 'nokogiri'
 gem 'open_uri_redirections'
+gem 'sidekiq'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.3'
