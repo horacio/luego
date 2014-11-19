@@ -5,9 +5,17 @@ class PagesController < ApplicationController
 
   def create
     page = current_user.pages.build(page_params)
-    page.save
-    page.parse!
-    redirect_to dashboard_path
+    if page.save
+      page.parse!
+      message = 'Page has been created.'
+    else
+      message = %{
+        The URL is invalid and cannot be saved.
+        Please use a valid URL beginning with http:// or https://
+      }
+    end
+
+    redirect_to dashboard_path, notice: message
   end
 
   def archive
