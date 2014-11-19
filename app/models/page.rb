@@ -33,6 +33,8 @@ class Page < ActiveRecord::Base
     save
   end
 
+  private
+
   def document
     @document ||= open(url, allow_redirections: :safe).read
   end
