@@ -11,6 +11,10 @@ gem 'nokogiri'
 gem 'open_uri_redirections'
 gem 'sidekiq'
 
+gem 'bitters'
+gem 'bourbon'
+gem 'neat'
+
 group :assets do
   gem 'sass-rails', '~> 4.0.3'
   gem 'uglifier', '>= 1.3.0'
