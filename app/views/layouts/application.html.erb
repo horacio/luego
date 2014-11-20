@@ -8,6 +8,8 @@
   </head>
   <body>
     <header>
+      <h1>Luego</h1>
+      <nav>
       <% unless signed_in? %>
         <%= link_to 'Sign In', new_session_path %>
         <%= link_to 'Sign Up', new_user_path %>
@@ -15,6 +17,7 @@
         <%= link_to current_user.username, dashboard_path %>
         <%= link_to 'Sign Out', session_path, method: :delete %>
       <% end %>
+      </nav>
     </header>
     <div class="container">
       <% if flash.notice %>
